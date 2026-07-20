@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+C:\springDev\springStudy\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3876318361.index
+1479445574.index
+2674669565.index
+1657330681.index
+107308615.index

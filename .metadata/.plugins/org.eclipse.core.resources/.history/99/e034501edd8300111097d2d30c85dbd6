@@ -1,0 +1,25 @@
+package com.sist.main;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainClass {
+	//DB설정 (Driver, url ...)
+	public static void main(String[] args) {
+		//Container에 등록
+		ApplicationContext app = new ClassPathXmlApplicationContext("src\main\java\com\sist\main\application.xml"); //클래스 메모리 할당
+		
+		//등록된 컨테이너에서 클래스 객체 읽기
+		Sawon sa = (Sawon)app.getBean("sa");
+		System.out.println("sa주소값: "+sa);
+		sa.print();
+		
+		Sawon sa1 = (Sawon)app.getBean("sa1");
+		sa1.print();
+		
+		Sawon sa2 = (Sawon)app.getBean("sa2");
+		sa2.print();
+		
+		
+	}
+}

@@ -1,0 +1,75 @@
+package com.sist.main;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.GenericApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class MainClass {
+	//DB설정 (Driver, url ...)
+	public static void main(String[] args) {
+		//Container에 등록
+		/*
+		ApplicationContext app = new ClassPathXmlApplicationContext("application.xml"); //클래스 메모리 할당
+		
+		//등록된 컨테이너에서 클래스 객체 읽기
+		Sawon sa = (Sawon)app.getBean("sa");
+		System.out.println("sa주소값: "+sa);
+		sa.print();
+		
+		Sawon sa1 = (Sawon)app.getBean("sa1");
+		sa1.print();
+		
+		Sawon sa2 = (Sawon)app.getBean("sa2");
+		sa2.print();
+		*/
+		GenericApplicationContext app = new GenericXmlApplicationContext("app.xml");
+	
+		Member m1 = (Member)app.getBean("mem1");
+		m1.print();
+		/*
+		System.out.println("=============");
+		Member m2 = (Member)app.getBean("mem2");
+		m2.print();
+		System.out.println("=============");
+		Member m3 = app.getBean("mem3",Member.class);
+		m3.print();
+		System.out.println("=============");
+		Member m4 = app.getBean("mem4",Member.class);
+		m4.print();
+		System.out.println("=============");
+		*/
+		/*
+		 * 클래스 관리 영역: 컨테이너
+		 * ----------- XML을 파싱 => 클래스 저장
+		 * | 클래스 메모리 할당
+		 * | Map에 저장
+		 *  --------------------> init-method
+		 * | 활용 ====> 개발자 사용
+		 * | 소멸
+		 *  --------------------> destory-method
+		 *  
+		 *  	컨테이너 클래스
+		 *  	BeanFactory
+		 *  		|
+		 *  	ApplicationContext
+		 *  		|--- GenericApplicationContext : 소멸 기능
+	 	 *			|--- AnnotationConfigApplicationContext
+	 	 *
+	 	 *	 클래스 => 객체 생성
+	 	 *		   | => 초기값이 필요할 때가 있다
+	 	 *				setter DI -> setCcc()를 이용해서 값을 저장
+	 	 *				constructor DI -> 생성자
+	 	 *				method DI -> driver등록 / 오라클 닫기
+	 	 *							 크롤링
+	 	 *							 init-method : 드라이버 설정
+	 	 *							 destory-method : 드라이버 닫기
+	 	 *
+	 	 *						------------------------------------------
+	 	 *						스프링을 통해서 필요한 값을 주입
+	 	 *
+	 	 *		DI		/ 		AOP		/		(MVC / ORM)
+	 	 *		75%				5%					기타
+		 */
+	}
+}

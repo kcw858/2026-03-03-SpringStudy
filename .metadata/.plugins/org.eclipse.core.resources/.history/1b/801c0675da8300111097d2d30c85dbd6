@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+		<!-- 클래스 등록 -->
+		<!--  
+			Map map = new hashMap()
+			map.put("id",Class.forName("com.sist.main.Sawon"))
+			id => 중복이 되면 오류 발생
+		-->
+		<bean id="sa" class="com.sist.main.Sawon" scope="singleton">
+			<!-- 변수에 값을 주입 : setter DI -->
+			<property name="sabun" value="1"></property>
+			<property name="name" value="홍길동"></property>
+			<property name="dept" value="개발부"></property>
+			<property name="job" value="사원"></property>
+			<property name="pay" value="3200"></property>
+		</bean>
+		
+		<bean id="sa1" class="com.sist.main.Sawon" scope="singleton">
+			<!-- 변수에 값을 주입 : setter DI -->
+			<property name="sabun" value="1"></property>
+			<property name="name" value="홍길동"></property>
+			<property name="dept" value="개발부"></property>
+			<property name="job" value="사원"></property>
+			<property name="pay" value="3200"></property>
+		</bean>
+</beans>

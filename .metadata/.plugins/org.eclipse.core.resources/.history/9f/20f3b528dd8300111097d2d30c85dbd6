@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 
+		public class Sawon
+		{
+			변수1..
+			변수2..
+			
+			public Sawon()
+		}
+		
+		=> 사원은 default 생성자가 있음
+		
+		<bean id="mem" class="com.sist.main.Member"> : default생성사를 호출, 근데 매개변수가 있는 생성자를 만들었기 때문에 매개변수를 넣어줘야한다
+		public class Member
+		{
+			변수1..
+			변수2...
+			public Member(int mno,String name,String address,String phone)
+			{
+			
+			}
+		}
+	 -->
+	<bean id="mem" class="com.sist.main.Member">
+		<constructor-arg value="1"></constructor-arg>
+	</bean>
+</beans>

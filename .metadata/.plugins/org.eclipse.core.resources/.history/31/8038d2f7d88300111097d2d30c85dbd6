@@ -1,0 +1,14 @@
+package com.sist.main;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainClass {
+	public static void main(String[] args) {
+		//Container에 등록
+		ApplicationContext app = new ClassPathXmlApplicationContext("application.xml"); //클래스 메모리 할당
+		
+		//등록된 컨테이너에서 클래스 객체 읽기
+		Sawon 
+	}
+}
