@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<context:component-scan base-package="com.sist.*"/>
+	<!-- 
+		클래스 메모리 할당 => 클래스 위에 
+		 = 클래스마다 구분 = 가독성이 좋게
+		@Component, : 일반 클래스
+					  ChatManager, NewsManager, MainClass ...
+		@Repository, : 저장소 => DAO
+		@Service, : 기능 처리 (DAO+OpenAPI)
+		@Controller,: Model => 브라우저와 연동
+						결과값 전송 + 라우터 가능
+		@RestController,: JSON전송하는 클래스
+		@ControllerAdvice, : 공통 예외처리
+ 		@Configuration : XML 대신 자바로 환경 설정
+ 		
+ 		DI => 메소드 위에, 멤버변수 위에, 메소드 매개변수
+ 		@Required, : 사용자 요청값이 반드시 필요한 경우 
+ 		@Autowired, : 스프링에서 자동으로 값(주소) 대입
+ 		@PostConstruct, : init-metod
+ 		@PreDestroy, : destory-method
+ 		@Resource 
+ 		
+ 		
+ 		interface A
+ 		class B implement A
+ 		class C implement A
+ 		
+ 		@Autowired
+ 		A a; -> B로 받을지 C로 받을지 모르기 때문에 오류 발생
+ 		
+ 		@Resource(name="b") -> 지정 가능
+ 		A a;
+ 		
+ 		@Autowired
+ 		@Qualifier(name="c")  -> 두개를 같이써야 가능 (합친게 @Resource)
+ 		A a;
+	 -->
+</beans>
