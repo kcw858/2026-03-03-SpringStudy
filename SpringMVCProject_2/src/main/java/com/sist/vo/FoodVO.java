@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class FoodVO {
 	private int no;
-	private String name,address,phone,type;
+	private String name,address,phone,type,poster;
 }

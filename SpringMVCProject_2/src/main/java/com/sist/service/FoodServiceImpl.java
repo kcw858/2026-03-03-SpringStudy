@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor //»ý¼ºÀÚ => @Autowired
 public class FoodServiceImpl implements FoodService{
 	
-	private FoodDAO dao;
+	private final FoodDAO dao;
 	
 	@Override
 	public List<FoodVO> foodListData(int start) {

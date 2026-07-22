@@ -31,12 +31,14 @@
       </property> 
     </bean>
 
+    <!-- MyBatis연결 -->
+    <bean id="ssf" class="org.mybatis.spring.SqlSessionFactoryBean"
+        p:dataSource-ref="dataSource"
+    />
 	
 	<!--  트랜잭션 설정 -->
 	<!--  Mybatis 셋팅 -->
-	<bean id="ssf" class="org.mybatis.spring.SqlSessionFactoryBean"
-		p:sqlSessionFactoryBuilder-ref="dataSource"
-	/>
+	
 	<!--  Mapper 구현 -->
 	<mybatis-spring:scan base-package="com.sist.mapper"
 		factory-ref="ssf"
